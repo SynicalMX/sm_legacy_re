@@ -5,6 +5,8 @@ add_library(loader SHARED
         src/dllmain.cpp
         src/loader.cpp
         src/hooks/allocconsole.cpp
+        src/hooks/contraptionstart.cpp
+        include/hooks/contraptionstart.h
 )
 
 set_target_properties(loader PROPERTIES

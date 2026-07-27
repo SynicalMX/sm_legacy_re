@@ -11,7 +11,7 @@ namespace SM {
         bool Enable();
         bool Disable();
 
-        bool IsEnabled() const { return m_enabled; }
+        [[nodiscard]] bool IsEnabled() const { return m_enabled; }
 
     private:
         void*  m_target;

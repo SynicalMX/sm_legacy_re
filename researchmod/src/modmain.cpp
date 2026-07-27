@@ -1,17 +1,17 @@
 #include "../include/modmain.h"
 #include <iostream>
 
-void ExampleMod::OnInit() {
+void ResearchMod::OnInit() {
     std::cout << "Hello, from example mod!" << std::endl;
 }
 
-void ExampleMod::OnUpdate() {
+void ResearchMod::OnUpdate() {
     std::cout << "Dev Mode: " << SM::IsDevMode() << std::endl;
 }
 
-void ExampleMod::OnDestroy() {
+void ResearchMod::OnDestroy() {
 }
 
 extern "C" __declspec(dllexport) SM::IMod* CreateMod() {
-    return new ExampleMod();
+    return new ResearchMod();
 }

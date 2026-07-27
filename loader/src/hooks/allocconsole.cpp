@@ -14,14 +14,9 @@ AllocConsoleHook::AllocConsoleHook()
 BOOL WINAPI AllocConsoleHook::Detour()
 {
 	BOOL result = Original();
-	if (!result) return result;
+	freopen_s(reinterpret_cast<FILE **>(stdout), "CONOUT$", "w", stdout);
 
-	FILE* f;
-	freopen_s(&f, "CONOUT$", "w", stdout);
-	freopen_s(&f, "CONOUT$", "w", stderr);
-	freopen_s(&f, "CONIN$",  "r", stdin);
-	std::ios::sync_with_stdio(true);
-	std::cout.setf(std::ios::unitbuf);
+	printf("AllocConsole redirected\n");
 
 	return result;
 }
